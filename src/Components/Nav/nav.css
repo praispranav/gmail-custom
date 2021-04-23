@@ -1,0 +1,49 @@
+div {
+  color: black;
+}
+
+.nav-brand {
+  margin-top: -5px;
+  margin-left: 1em;
+}
+
+.searchicon {
+  position: relative;
+  -webkit-animation-name: search;
+          animation-name: search;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes search {
+  from {
+    right: 0;
+  }
+  to {
+    left: 10%;
+  }
+}
+
+@keyframes search {
+  from {
+    right: 0;
+  }
+  to {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mobile {
+    display: none;
+  }
+  .nav-brand {
+    margin-top: 0;
+    margin-left: 0vw;
+  }
+}
+/*# sourceMappingURL=nav.css.map */
