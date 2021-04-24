@@ -12,7 +12,7 @@ const MailSection = (props) =>{
     const context = useContext(UserContext)
     const State = context.state.activeMail
     return(
-    <div style={{padding:"1em",position:"fixed",zIndex:"1", width:"96vw", height:"100vh", top:"0", background:"white"}}>
+    <div style={{padding:"1em",position:"fixed",zIndex:"1", width:"96vw", height:"90vh", top:"0", background:"white"}}>
         <div style={{display:"flex", justifyContent:"space-between", marginTop:"1em"}}>
             <CloseIcon fontSize="medium" onClick={()=> context.dispatch({type:"active", value:"false"})}/>
             <div>

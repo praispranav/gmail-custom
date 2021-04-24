@@ -27,16 +27,22 @@ const Section = (props) => {
             }
         }
     }
+
     const [count, setCount] = useState(0)
     useEffect(()=>{
-        hello()
+        hello();
+        // updatedData();
+        console.log(context.state.data)
     },[count])
+
+
     const Dispatch = () =>{
-        setCount(count+1) 
-        context.dispatch({type:"delete", value:props.id})
+        setCount(count+1)
+        // context.dispatch({}) 
+        context.dispatch({type:"delete", value: true, id: props.id})
     }
     return(
-        <div style={MyDel ? {display:"none"}:{dispaly:"block"}}>                
+        <div>                
         <Paper style={{marginTop:"2px",paddingTop:"15px",paddingLeft:"15px",borderRadius:"0", width:"96vw", height:"5em", background:BackgroundMouseOver}}>
         <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
             <AccountCircle fontSize="large"/>

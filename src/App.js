@@ -1,10 +1,6 @@
 import React,{useReducer} from "react"
 import ComponentsManager from "./Components/ComponentsManager"
 
-import Test from "./Test"
-import Mails from "./Components/data"
-
-
 export const UserContext = React.createContext()
 
 const initialState = {
@@ -26,7 +22,14 @@ const Reducer = (state, action) => {
     case 'active':
       return {...state, active: action.value}
     case 'delete':
-      return { ...state, delete: [...state.delete, action.value]}
+      const updatedData = state.data.map((item)=>{
+        if(item.id === action.id){
+          item.delete = !item.delete
+        }
+        console.log(item)
+        return item
+      })
+      return { ...state, data:updatedData }
     default: return state
   }
 }

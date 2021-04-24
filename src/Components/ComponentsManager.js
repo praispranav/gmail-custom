@@ -6,7 +6,6 @@ import { Switch, Route } from "react-router-dom"
 import MailMain from './Mails/MailMain'
 
 import Mails from "./data"
-// import MailSection from './Mails/MailBody'
 
 function ComponentsManager() {
     const context = useContext(UserContext)
@@ -19,7 +18,7 @@ function ComponentsManager() {
             <Nav />
             <Switch>
                 <Route exact path="/delete">
-                    <h1>Helllo</h1>
+                    <MailMain my="2" />
                 </Route>
                 <Route path="/">
                     <MailMain />
