@@ -6,6 +6,14 @@ import { UserContext } from "../../App"
 // import UserIcon from "@material-ui/icons/User"
 import AccountCircle  from '@material-ui/icons/AccountCircle';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import LabelIcon from "@material-ui/icons/Label"
+import CloseIcon from "@material-ui/icons/Close"
+import BlockIcon from "@material-ui/icons/Block"
+// import MenuIcon from "@material-ui/icons/Menu"
+import MailIcon from "@material-ui/icons/Mail"
+import LabelImportantIcon from "@material-ui/icons/LabelImportant"
+// import SearchIcon from "@material-ui/icons/Search"
+import DeleteIcon from "@material-ui/icons/Delete"
 
 const Section = (props) => {
     const context = useContext(UserContext);
@@ -38,8 +46,17 @@ const Section = (props) => {
 
     const Dispatch = () =>{
         setCount(count+1)
-        // context.dispatch({}) 
         context.dispatch({type:"delete", value: true, id: props.id})
+    }
+
+    const DispatchLabelled = () =>{
+        setCount(count+1)
+        context.dispatch({type:"label", value: true, id: props.id})
+    }
+
+    const DispatchSpam = () =>{
+        setCount(count+1)
+        context.dispatch({type:"spam", value: true, id: props.id})
     }
     return(
         <div>                
@@ -52,11 +69,17 @@ const Section = (props) => {
                 <Typography variant="p">{props.email}</Typography>
             </div>
             {console.log(context.state.delete)}
-            <MoreVertIcon onClick={()=> setOpen(!Open)} />
-            <Paper style={{position:"absolute",padding:"0.7em",height:"auto",width:"3em",display:SearchDisplay, right:"20px"}}>
-               <Typography variant="p" onClick={Dispatch} style={{paddingTop:"1001.8em"}}>Delete</Typography><br />
-               <Typography variant="p" style={{marginBottom:".8em"}}>Star</Typography><br/>
-               <Typography variant="p">Spam</Typography>
+                <LabelIcon style={props.label ? {display:"block"}: {display:"none"}} />
+            <div style={{display:"flex", flexDirection:"column"}}>
+                <MoreVertIcon onClick={()=> setOpen(!Open)} />
+            </div>
+            <Paper style={{position:"absolute",padding:"0.7em",height:"auto",width:"6em",border:"1px solid lightgrey",display:SearchDisplay, right:"20px"}}>
+               <div style={{textAlign:"right",marginTop:"0px", marginRight:"-4px"}}>
+                    <CloseIcon onClick={()=> setOpen(!Open)}/>
+               </div>
+               <Typography variant="h6" onClick={Dispatch} style={{display:"flex", alignItems:"center",paddingTop:"0em",marginBottom:"-10px"}}><DeleteIcon style={{fontSize:"14px", marginRight:"6px"}}/><small>Delete</small></Typography><br />
+               <Typography variant="h6" onClick={DispatchLabelled} style={{display:"flex", alignItems:"center",paddingTop:"0em",marginBottom:"-10px"}} ><LabelImportantIcon  style={{fontSize:"14px", marginRight:"6px"}}/><small>Label</small></Typography><br/>
+               <Typography variant="h6" onClick={DispatchSpam} style={{display:"flex", alignItems:"center"}}><BlockIcon style={{fontSize:"14px", marginRight:"6px"}}/><small> Spam</small></Typography>
             </Paper>
         </div>
     </Paper>

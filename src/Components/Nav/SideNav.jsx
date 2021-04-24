@@ -4,6 +4,7 @@ import {UserContext} from "../../App"
 import Typography from "@material-ui/core/Typography"
 
 import CloseIcon from "@material-ui/icons/Close"
+import BlockIcon from "@material-ui/icons/Block"
 // import MenuIcon from "@material-ui/icons/Menu"
 import MailIcon from "@material-ui/icons/Mail"
 import LabelImportantIcon from "@material-ui/icons/LabelImportant"
@@ -25,19 +26,27 @@ const SideBar = (props) =>{
                     <Link to="">
                     <div style={{ marginTop:"1em",textTransform:"none" ,marginLeft:"10%",display:"flex", alignItems:"center"}}>
                             <MailIcon style={{fontSize:"20px"}}/>
-                            <Typography variant="h6" style={{marginLeft:"0.8em"}}>Mail</Typography>
+                            <Typography variant="h6" style={{marginLeft:"0.8em"}}><small>Mails</small></Typography>
                     </div>
                     </Link>
                     <Link to="/delete">
                     <div style={{marginTop:".5em" ,marginLeft:"10%",alignItems:"center",display:"flex"}}>
                         <DeleteIcon style={{fontSize:"20px"}}/>
-                        <Typography variant="h6" style={{marginLeft:"0.8em"}}>Delete</Typography>
+                        <Typography variant="h6" style={{marginLeft:"0.8em"}}><small>Delete</small></Typography>
                     </div>
                     </Link>
+                    <Link to="/labelled">
                     <div style={{marginTop:".5em" ,marginLeft:"10%",alignItems:"center",display:"flex"}}>
                         <LabelImportantIcon style={{fontSize:"20px"}}/>
-                        <Typography variant="h6" style={{marginLeft:"0.8em"}}>Labelled</Typography>
+                        <Typography variant="h6" style={{marginLeft:"0.8em"}}><small>Labelled</small></Typography>
                     </div>
+                    </Link>
+                    <Link to="/spam">
+                    <div style={{marginTop:".5em" ,marginLeft:"10%",alignItems:"center",display:"flex"}}>
+                        <BlockIcon style={{fontSize:"20px"}}/>
+                        <Typography variant="h6" style={{marginLeft:"0.8em"}}><small>Spam</small></Typography>
+                    </div>
+                    </Link>
                 </div>
                 <div onClick={()=> props.close()} style={{height:"100vh",width:"40vw", background:"rgba(0,0,0,0.3)"}}>
 

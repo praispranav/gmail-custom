@@ -30,6 +30,24 @@ const Reducer = (state, action) => {
         return item
       })
       return { ...state, data:updatedData }
+    case 'label':
+      const updatedDatalabel = state.data.map((item)=>{
+        if(item.id === action.id){
+          item.labelled = !item.labelled
+        }
+        console.log(item)
+        return item
+      })
+      return { ...state, data:updatedDatalabel }
+    case 'spam':
+      const updatedDataspam = state.data.map((item)=>{
+        if(item.id === action.id){
+          item.spam = !item.spam
+        }
+        console.log(item)
+        return item
+      })
+      return { ...state, data:updatedDataspam }
     default: return state
   }
 }

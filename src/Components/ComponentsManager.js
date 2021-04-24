@@ -20,6 +20,12 @@ function ComponentsManager() {
                 <Route exact path="/delete">
                     <MailMain my="2" />
                 </Route>
+                <Route exact path="/spam">
+                    <MailMain my="3" />
+                </Route>
+                <Route exact path="/labelled">
+                    <MailMain my="4" />
+                </Route>
                 <Route path="/">
                     <MailMain />
                 </Route>
