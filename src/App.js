@@ -26,7 +26,7 @@ const Reducer = (state, action) => {
     case 'active':
       return {...state, active: action.value}
     case 'delete':
-      return { ...state, delete: [...state.delete, action.delete]}
+      return { ...state, delete: [...state.delete, action.value]}
     default: return state
   }
 }

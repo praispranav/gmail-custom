@@ -14,7 +14,12 @@ const MailMain = () => {
         console.log(context.state.active)
     }
 
-    const Main = context.state.data.map((item)=> <div >
+    // const DeletedItems =(item) =
+    const a = context.state.delete 
+    const hello = (Display) => {
+        return {display:Display}
+    }
+    const Main = context.state.data.map((item)=> <div>
         <Section keys={item.id} id={item.id} email={item.email} handleClick={(event)=> handleClick(event)} subject={item.subject} content={item.content} />
     </div>)
 
