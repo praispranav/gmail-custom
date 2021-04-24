@@ -13,27 +13,8 @@ import DeleteIcon from "@material-ui/icons/Delete"
 
 
 import "./nav.css"
-
-const SideBar = (props) =>{
-    return(
-        <div style={props.open ? {display:"block"}: {display:"none"}}>
-            <div style={{width:"100vw",position:"fixed", zIndex:"100", top:"0", display:"flex"}}>
-                <div style={{width:"85vw",height:"100vh", background:"white"}}>
-                    <div style={{textAlign:"right", marginTop:"1em", marginRight:"1em"}}>
-                        <CloseIcon onClick={()=> props.close()} style={{fontSize:"25px",color:"black", alignText:"right"}}/>
-                    </div>
-                    <div style={{alignItems:"center",justifyContent:"center", marginTop:"1.5em" ,marginRight:"30%",display:"flex"}}>
-                        <DeleteIcon style={{fontSize:"20px"}}/>
-                        <Typography variant="h6" style={{marginLeft:"0.8em"}}>Delete</Typography>
-                    </div>
-                </div>
-                <div onClick={()=> props.close()} style={{height:"100vh",width:"40vw", background:"rgba(0,0,0,0.3)"}}>
-
-                </div>
-            </div>
-        </div>
-    )
-}
+import { Link } from "react-router-dom"
+import SideBar from "./SideNav"
 
 const Nav = () => {
     const [IsNavOPen, setIsNavOPen] = useState(false);

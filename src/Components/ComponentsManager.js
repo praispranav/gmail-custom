@@ -2,6 +2,7 @@ import React,{ useEffect, useContext } from 'react'
 // import Typography from "@material-ui/core/Typography"
 import { UserContext } from "../App"
 import Nav from "./Nav/Nav.jsx"
+import { Switch, Route } from "react-router-dom"
 import MailMain from './Mails/MailMain'
 
 import Mails from "./data"
@@ -16,7 +17,14 @@ function ComponentsManager() {
         <div>
             {/* <Typography variant="h6"> Count --{context.currentState.pranavState}</Typography> */}
             <Nav />
-            <MailMain />
+            <Switch>
+                <Route exact path="/delete">
+                    <h1>Helllo</h1>
+                </Route>
+                <Route path="/">
+                    <MailMain />
+                </Route>
+            </Switch>
         </div>
     )
 }
