@@ -1,26 +1,19 @@
 import React,{useContext} from "react"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-// import UserIcon from "@material-ui/icons/User"
-// import AccountCircle  from '@material-ui/icons/AccountCircle';
-// import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Section from "./Section"
 import MailSection from "./MailBody"
 import {UserContext} from "../../App"
 
-const MailMain = () => {
-    // const context = useContext(UserContext)
+const MailMain = () => {1232
     const context = useContext(UserContext)
     const handleClick = (item) =>{
         context.dispatch({type:"active", value:item})
         console.log(context.state.active)
     }
-
-    // const DeletedItems =(item) =
-    const a = context.state.delete 
-    const hello = (Display) => {
-        return {display:Display}
+    const handleChange = (id) ={
+        console.log("You id",id )
     }
     const Main = context.state.data.map((item)=> <div>
-        <Section keys={item.id} id={item.id} email={item.email} handleClick={(event)=> handleClick(event)} subject={item.subject} content={item.content} />
+        <Section keys={item.id} handleChange={(event)=> handleChange(event)} id={item.id} email={item.email} handleClick={(event)=> handleClick(event)} subject={item.subject} content={item.content} />
     </div>)
 
     const FilterSection = context.state.data.filter((item)=> item.id === context.state.active).map((item)=>
